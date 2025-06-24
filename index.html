@@ -40,23 +40,24 @@
             justify-content: center;
             align-items: center;
             position: relative;
-            padding: 20px;
+            padding: 15px;
         }
 
-        /* Gift Box Styles */
+        /* Gift Box - Phone Optimized */
         .box {
-            width: 100%;
-            max-width: 300px;
-            height: 150px;
-            min-height: 150px;
+            width: 90%;
+            max-width: 280px;
+            height: 140px;
+            min-height: 140px;
             background-color: #e67e22;
             position: relative;
             cursor: pointer;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
             transition: all 0.5s ease;
             z-index: 10;
             margin: auto;
             border-radius: 5px;
+            touch-action: manipulation;
         }
 
         .box:before {
@@ -74,7 +75,7 @@
         }
 
         .box.push-down {
-            transform: translateY(30vh);
+            transform: translateY(25vh);
         }
 
         .box.locked {
@@ -88,10 +89,10 @@
 
         .box-lid {
             position: absolute;
-            top: -15px;
+            top: -12px;
             left: 5%;
             width: 90%;
-            height: 15px;
+            height: 12px;
             background-color: #e67e22;
             border-radius: 5px 5px 0 0;
             transition: all 0.5s ease;
@@ -103,22 +104,22 @@
 
         .box-tape {
             position: absolute;
-            top: -10px;
+            top: -8px;
             left: 50%;
             transform: translateX(-50%);
-            width: 40px;
-            height: 20px;
+            width: 35px;
+            height: 16px;
             background-color: rgba(255,255,255,0.7);
             clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
         }
 
         .box-label {
             position: absolute;
-            bottom: 10px;
+            bottom: 8px;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
-            height: 30px;
+            width: 90px;
+            height: 26px;
             background-color: white;
             display: flex;
             justify-content: center;
@@ -126,15 +127,11 @@
             font-weight: bold;
             color: #e67e22;
             border-radius: 5px;
-            font-size: 14px;
+            font-size: 13px;
             transition: all 0.3s ease;
         }
 
-        .box.locked .box-label {
-            color: #e67e22;
-        }
-
-        /* Content Container */
+        /* Content Container - Phone Optimized */
         .content-container {
             position: absolute;
             width: 100%;
@@ -144,178 +141,163 @@
             align-items: center;
             justify-content: center;
             pointer-events: none;
-            padding: 20px;
+            padding: 15px;
         }
 
         .hidden-content {
             width: 100%;
-            max-width: 800px;
+            max-width: 100%;
             text-align: center;
             opacity: 0;
             pointer-events: none;
             transition: all 0.5s ease;
-            transform: translateY(100px);
+            transform: translateY(80px);
             position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin-bottom: 100px;
+            margin-bottom: 80px;
         }
 
         .hidden-content.show {
             opacity: 1;
-            transform: translateY(-10vh);
+            transform: translateY(-8vh);
         }
 
-        /* Text Content */
+        /* Text Content - Phone Optimized */
         .text-content {
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             z-index: 5;
             position: relative;
         }
 
         .message {
-            font-size: clamp(18px, 6vw, 32px);
+            font-size: clamp(20px, 7vw, 28px);
             color: #d35400;
-            margin: 10px 0;
+            margin: 8px 0;
             font-weight: bold;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
             transition: all 0.5s ease;
             padding: 0 10px;
-        }
-
-        .message.hide {
-            transform: translateY(100px);
-            opacity: 0;
+            line-height: 1.3;
         }
 
         .georgian-message {
-            font-size: clamp(16px, 5vw, 24px);
+            font-size: clamp(16px, 5.5vw, 22px);
             color: #d35400;
-            margin: 10px 0;
+            margin: 8px 0;
             font-weight: bold;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
             transition: all 0.5s ease;
             padding: 0 10px;
-            font-family: 'Arial', sans-serif;
+            line-height: 1.3;
         }
 
-        .georgian-message.hide {
-            transform: translateY(100px);
-            opacity: 0;
-        }
-
-        /* Photo Gallery */
+        /* Photo Gallery - Phone Optimized with Perfect Fit */
         .photo-gallery {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
-            margin: 20px 0;
+            gap: 12px;
+            margin: 15px 0;
             z-index: 5;
             position: relative;
             width: 100%;
-            max-width: 600px;
+            max-width: 100%;
         }
 
         .photo-frame {
-            width: calc(50% - 15px);
-            max-width: 150px;
+            width: calc(50% - 12px);
+            max-width: 140px;
             aspect-ratio: 1/1;
-            border: 8px solid white;
-            border-radius: 5px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border: 6px solid white;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
             overflow: hidden;
             background-color: #fff;
             transform: rotate(5deg);
             transition: all 0.3s ease;
-        }
-
-        .photo-frame:nth-child(even) {
-            transform: rotate(-5deg);
-        }
-
-        .photo-frame:hover {
-            transform: rotate(0deg) scale(1.05);
-            z-index: 10;
+            position: relative;
         }
 
         .photo-frame img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
 
-        /* Cake */
+        .photo-frame:nth-child(even) {
+            transform: rotate(-5deg);
+        }
+
+        /* Cake - Phone Optimized */
         .cake {
-            width: 80%;
-            max-width: 200px;
-            height: 100px;
+            width: 75%;
+            max-width: 180px;
+            height: 90px;
             position: relative;
-            margin: 20px 0;
+            margin: 15px 0;
             transition: all 0.5s ease;
             z-index: 5;
         }
 
-        .cake.hide {
-            transform: translateY(100px);
-            opacity: 0;
-        }
-
         .cake-base {
             width: 100%;
-            height: 60px;
+            height: 50px;
             background-color: #f9c5d1;
-            border-radius: 10px;
+            border-radius: 8px;
             position: relative;
         }
 
         .cake-top {
             width: 110%;
-            height: 30px;
+            height: 25px;
             background-color: #f6a8bb;
             border-radius: 50%;
             position: absolute;
-            top: -15px;
+            top: -12px;
             left: -5%;
         }
 
         .cake-decoration {
             position: absolute;
-            top: -5px;
+            top: -4px;
             left: 0;
             width: 100%;
-            height: 20px;
+            height: 16px;
             background-color: #ffebf3;
-            border-radius: 10px;
+            border-radius: 8px;
         }
 
         .candle {
-            width: 8px;
-            height: 30px;
+            width: 6px;
+            height: 25px;
             background-color: #fff;
             position: absolute;
-            top: -40px;
+            top: -32px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 2;
         }
 
         .flame {
-            width: 12px;
-            height: 20px;
+            width: 10px;
+            height: 16px;
             background-color: #ffd700;
             border-radius: 50% 50% 20% 20%;
             position: absolute;
-            top: -20px;
+            top: -16px;
             left: 50%;
             transform: translateX(-50%);
-            box-shadow: 0 0 10px #ff4500, 0 0 20px #ff8c00;
+            box-shadow: 0 0 8px #ff4500, 0 0 16px #ff8c00;
             animation: flicker 0.5s infinite alternate;
         }
 
@@ -324,7 +306,7 @@
             100% { transform: translateX(-50%) scale(1.1); opacity: 0.8; }
         }
 
-        /* Balloons */
+        /* Balloons - Phone Optimized */
         .balloons-container {
             position: absolute;
             width: 100%;
@@ -337,38 +319,26 @@
             pointer-events: none;
             transition: all 0.5s ease;
             z-index: 1;
-        }
-
-        .balloons-center {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding-top: 20px;
-        }
-
-        .balloons-container.hide {
-            transform: translateY(100px);
-            opacity: 0;
+            padding-top: 10px;
         }
 
         .balloon {
             position: absolute;
             border-radius: 50%;
             animation: float 5s infinite ease-in-out;
-            transition: all 0.5s ease;
             z-index: 1;
+            width: 30px;
+            height: 36px;
+            font-size: 16px;
         }
 
         .balloon:before {
             content: '';
             position: absolute;
-            width: 2px;
-            height: 40px;
+            width: 1.5px;
+            height: 30px;
             background-color: #333;
-            bottom: -40px;
+            bottom: -30px;
             left: 50%;
             transform: translateX(-50%);
         }
@@ -378,36 +348,27 @@
             justify-content: center;
             align-items: center;
             font-weight: bold;
-            font-size: clamp(16px, 6vw, 24px);
             color: white;
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
         }
 
-        /* Confetti */
+        /* Confetti - Phone Optimized */
         .confetti {
             position: absolute;
-            width: 10px;
-            height: 10px;
+            width: 6px;
+            height: 6px;
             background-color: #f00;
             opacity: 0;
             animation: confetti-fall 3s linear forwards;
             z-index: 1;
         }
 
-        .confetti.left {
-            left: 20%;
-        }
-
-        .confetti.right {
-            right: 20%;
-        }
-
         .emoji-confetti {
-            font-size: 20px;
+            font-size: 16px;
             position: absolute;
             opacity: 0;
             animation: confetti-fall 3s linear forwards;
@@ -415,180 +376,107 @@
         }
 
         @keyframes confetti-fall {
-            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            0% { transform: translateY(-80px) rotate(0deg); opacity: 1; }
             100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
         }
 
-        /* ========== RESPONSIVE ADJUSTMENTS ========== */
-        
-        /* Large Desktop Screens (1920px and up) */
-        @media (min-width: 1920px) {
+        /* Hide elements when needed */
+        .hide {
+            transform: translateY(80px);
+            opacity: 0;
+        }
+
+        /* ===== PHONE-SPECIFIC MEDIA QUERIES ===== */
+        @media (max-width: 480px) {
+            /* Smaller phones */
             .box {
-                max-width: 350px;
-                height: 175px;
+                height: 120px;
+                min-height: 120px;
             }
             
-            .hidden-content.show {
-                transform: translateY(-15vh);
-            }
-            
-            .photo-frame {
-                max-width: 180px;
-            }
-            
-            .cake {
-                max-width: 250px;
-                height: 125px;
-            }
-        }
-
-        /* Standard Desktop Screens (1024px - 1919px) */
-        @media (min-width: 1024px) and (max-width: 1919px) {
-            .hidden-content.show {
-                transform: translateY(-12vh);
-            }
-        }
-
-        /* Tablets (768px - 1023px) */
-        @media (min-width: 768px) and (max-width: 1023px) {
-            .box.push-down {
-                transform: translateY(25vh);
-            }
-            
-            .hidden-content.show {
-                transform: translateY(-8vh);
-            }
-        }
-
-        /* Landscape orientation adjustments */
-        @media (orientation: landscape) {
             .box.push-down {
                 transform: translateY(20vh);
             }
             
             .hidden-content.show {
-                transform: translateY(-5vh);
+                transform: translateY(-6vh);
             }
             
-            .photo-gallery {
-                flex-direction: row;
-                flex-wrap: wrap;
+            .message {
+                font-size: clamp(18px, 7vw, 24px);
+            }
+            
+            .georgian-message {
+                font-size: clamp(14px, 5vw, 18px);
             }
             
             .photo-frame {
-                width: calc(25% - 15px);
+                width: calc(50% - 8px);
                 max-width: 120px;
+                border-width: 4px;
             }
             
-            /* Small landscape screens (mobile landscape) */
-            @media (max-height: 500px) {
-                .box.push-down {
-                    transform: translateY(10vh);
-                }
-                
-                .hidden-content.show {
-                    transform: translateY(-3vh);
-                }
-                
-                .message {
-                    font-size: clamp(16px, 4vw, 24px);
-                }
-                
-                .georgian-message {
-                    font-size: clamp(14px, 3vw, 20px);
-                }
-            }
-        }
-
-        /* Small Tablets (600px - 767px) */
-        @media (min-width: 600px) and (max-width: 767px) {
-            .box.push-down {
-                transform: translateY(25vh);
-            }
-        }
-
-        /* Mobile Phones (up to 599px) */
-        @media (max-width: 599px) {
-            .box.push-down {
-                transform: translateY(30vh);
+            .cake {
+                height: 80px;
+                max-width: 160px;
             }
             
-            .hidden-content.show {
-                transform: translateY(-10vh);
+            .balloon {
+                width: 26px;
+                height: 31px;
+                font-size: 14px;
             }
         }
 
-        /* Very small screens (height under 500px) */
-        @media (max-height: 500px) {
+        @media (max-width: 360px) {
+            /* Very small phones */
             .box {
                 height: 100px;
                 min-height: 100px;
             }
             
+            .box-label {
+                width: 80px;
+                height: 22px;
+                font-size: 11px;
+            }
+            
+            .message {
+                font-size: clamp(16px, 7vw, 20px);
+            }
+            
+            .photo-frame {
+                max-width: 100px;
+            }
+        }
+
+        /* Landscape orientation for phones */
+        @media (orientation: landscape) and (max-height: 500px) {
             .box.push-down {
-                transform: translateY(15vh);
+                transform: translateY(10vh);
             }
             
             .hidden-content.show {
-                transform: translateY(-5vh);
+                transform: translateY(-4vh);
+            }
+            
+            .photo-gallery {
+                flex-direction: row;
+                gap: 8px;
+            }
+            
+            .photo-frame {
+                width: calc(25% - 8px);
+                max-width: 80px;
             }
             
             .cake {
                 height: 70px;
+                max-width: 140px;
             }
             
-            .cake-base {
-                height: 45px;
-            }
-            
-            .cake-top {
-                height: 20px;
-                top: -10px;
-            }
-            
-            .candle {
-                height: 20px;
-                top: -25px;
-            }
-            
-            .flame {
-                height: 12px;
-                top: -12px;
-            }
-            
-            .photo-frame {
-                width: calc(50% - 10px);
-                max-width: 100px;
-                border-width: 5px;
-            }
-            
-            .message {
-                font-size: clamp(16px, 5vw, 24px);
-            }
-            
-            .georgian-message {
-                font-size: clamp(14px, 4vw, 20px);
-            }
-        }
-
-        /* Ultra-wide screens (2560px and wider) */
-        @media (min-width: 2560px) {
-            .container {
-                max-width: 2560px;
-                margin: 0 auto;
-            }
-            
-            .box {
-                max-width: 400px;
-                height: 200px;
-            }
-            
-            .hidden-content.show {
-                transform: translateY(-20vh);
-            }
-            
-            .photo-frame {
-                max-width: 200px;
+            .balloons-container {
+                padding-top: 5px;
             }
         }
     </style>
@@ -599,8 +487,8 @@
             <div class="hidden-content" id="hiddenContent">
                 <div class="text-content">
                     <div class="message">Happy Birthday Gvantsa!</div>
-                    <div class="georgian-message">გვანცა გილოცავ დაბადების დღეს</div>
-                    <div class="georgian-message">ბორჯომში დაკარგულო</div>
+                    <div class="georgian-message">გილოცავ დაბადების დღეს!</div>
+                    <div class="georgian-message">ბორჯომში დაკარგულო ❤️</div>
                 </div>
                 
                 <div class="photo-gallery" id="photoGallery">
@@ -617,7 +505,7 @@
                 </div>
                 
                 <div class="balloons-container" id="balloonsContainer">
-                    <div class="balloons-center"></div>
+                    <!-- Balloons will be added by JavaScript -->
                 </div>
             </div>
         </div>
@@ -681,7 +569,7 @@
                 balloonsContainer.classList.remove('hide');
                 
                 // Clear old elements and create new ones
-                document.querySelector('.balloons-center').innerHTML = '';
+                balloonsContainer.innerHTML = '';
                 photoGallery.innerHTML = '';
                 createNumberBalloons();
                 createConfetti();
@@ -693,27 +581,26 @@
         }
 
         function createNumberBalloons() {
-            const balloonsCenter = document.querySelector('.balloons-center');
+            const balloonsContainer = document.getElementById('balloonsContainer');
             const colors = ['#ff7675', '#74b9ff', '#55efc4', '#ffeaa7', '#a29bfe', '#fd79a8'];
             
             // Calculate balloon size based on screen size
-            const baseSize = Math.min(window.innerWidth, window.innerHeight);
-            const balloonSize = Math.max(30, Math.min(60, baseSize * 0.08));
+            const isLandscape = window.innerWidth > window.innerHeight;
+            const balloonCount = isLandscape ? 12 : 16;
+            const balloonSize = isLandscape ? 24 : 30;
             
-            // Create 16 balloons with number "16"
-            for (let i = 0; i < 16; i++) {
+            // Create balloons with number "16"
+            for (let i = 0; i < balloonCount; i++) {
                 const balloon = document.createElement('div');
                 balloon.className = 'balloon number-balloon';
                 
-                balloon.style.width = `${balloonSize}px`;
-                balloon.style.height = `${balloonSize * 1.2}px`;
                 balloon.style.background = colors[Math.floor(Math.random() * colors.length)];
-                balloon.style.left = `${10 + Math.random() * 80}%`;
-                balloon.style.top = `${10 + Math.random() * 30}%`;
+                balloon.style.left = `${5 + Math.random() * 90}%`;
+                balloon.style.top = `${5 + Math.random() * 20}%`;
                 balloon.style.animationDelay = `${Math.random() * 5}s`;
                 balloon.textContent = '16';
                 
-                balloonsCenter.appendChild(balloon);
+                balloonsContainer.appendChild(balloon);
             }
         }
 
@@ -727,18 +614,25 @@
             ];
             
             // Create photo frames with different images
-            for (let i = 0; i < photoUrls.length; i++) {
+            photoUrls.forEach(url => {
                 const frame = document.createElement('div');
                 frame.className = 'photo-frame';
                 
-                const img = document.createElement('img');
-                img.src = photoUrls[i];
+                const img = new Image();
+                img.src = url;
                 img.alt = 'Birthday photo';
                 img.loading = 'lazy';
+                img.onload = function() {
+                    // Additional processing if needed after image loads
+                };
+                img.onerror = function() {
+                    // Fallback if image fails to load
+                    img.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f0f0f0"/><text x="50" y="50" font-family="Arial" font-size="10" text-anchor="middle" fill="%23aaa">Photo</text></svg>';
+                };
                 
                 frame.appendChild(img);
                 photoGallery.appendChild(frame);
-            }
+            });
         }
 
         function createConfetti() {
@@ -746,7 +640,7 @@
             const colors = ['#ff7675', '#74b9ff', '#55efc4', '#ffeaa7', '#a29bfe', '#fd79a8'];
             
             // Create confetti pieces
-            for (let i = 0; i < 50; i++) {
+            for (let i = 0; i < 30; i++) {
                 const confetti = document.createElement('div');
                 confetti.className = Math.random() > 0.5 ? 'confetti left' : 'confetti right';
                 confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
@@ -754,31 +648,22 @@
                 confetti.style.right = `${Math.random() * 30}%`;
                 confetti.style.animationDelay = `${Math.random() * 3}s`;
                 
-                // Adjust size based on screen
-                const size = Math.random() * 8 + 4;
-                confetti.style.width = `${size}px`;
-                confetti.style.height = `${size}px`;
-                
                 container.appendChild(confetti);
             }
         }
 
         function createEmojiConfetti() {
             const container = document.querySelector('.container');
-            const emojis = ['🎉', '✨', '💊', '🧬', '🩺', '🩼', '🩹', '💉'];
+            const emojis = ['🎉', '✨', '💊', '🧬', '🩺', '🩼', '🩹', '💉','🎉', '✨', '💊', '🧬', '🩺', '🩼', '🩹', '💉','🎉', '✨', '💊', '🧬', '🩺', '🩼', '🩹', '💉'];
             
             // Create emoji confetti
-            for (let i = 0; i < 30; i++) {
+            for (let i = 0; i < 20; i++) {
                 const emoji = document.createElement('div');
                 emoji.className = Math.random() > 0.5 ? 'emoji-confetti left' : 'emoji-confetti right';
                 emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
                 emoji.style.left = `${Math.random() * 30}%`;
                 emoji.style.right = `${Math.random() * 30}%`;
                 emoji.style.animationDelay = `${Math.random() * 3}s`;
-                
-                // Adjust size based on screen
-                const size = Math.random() * 10 + 15;
-                emoji.style.fontSize = `${size}px`;
                 
                 container.appendChild(emoji);
             }
@@ -787,7 +672,7 @@
         // Handle window resize
         window.addEventListener('resize', function() {
             if (currentState === 1) {
-                document.querySelector('.balloons-center').innerHTML = '';
+                document.getElementById('balloonsContainer').innerHTML = '';
                 document.querySelectorAll('.confetti, .emoji-confetti').forEach(el => el.remove());
                 createNumberBalloons();
                 createConfetti();
@@ -795,22 +680,22 @@
             }
         });
 
-        // Prevent zooming on mobile devices
-        document.addEventListener('gesturestart', function(e) {
-            e.preventDefault();
-        });
-
         // Handle orientation change
         window.addEventListener('orientationchange', function() {
             setTimeout(() => {
                 if (currentState === 1) {
-                    document.querySelector('.balloons-center').innerHTML = '';
+                    document.getElementById('balloonsContainer').innerHTML = '';
                     document.querySelectorAll('.confetti, .emoji-confetti').forEach(el => el.remove());
                     createNumberBalloons();
                     createConfetti();
                     createEmojiConfetti();
                 }
-            }, 500);
+            }, 100);
+        });
+
+        // Prevent zooming on mobile devices
+        document.addEventListener('gesturestart', function(e) {
+            e.preventDefault();
         });
     </script>
 </body>
