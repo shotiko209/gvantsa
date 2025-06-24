@@ -43,6 +43,7 @@
             padding: 20px;
         }
 
+        /* Gift Box Styles */
         .box {
             width: 100%;
             max-width: 300px;
@@ -133,6 +134,7 @@
             color: #e67e22;
         }
 
+        /* Content Container */
         .content-container {
             position: absolute;
             width: 100%;
@@ -166,6 +168,7 @@
             transform: translateY(-10vh);
         }
 
+        /* Text Content */
         .text-content {
             width: 100%;
             display: flex;
@@ -176,6 +179,38 @@
             position: relative;
         }
 
+        .message {
+            font-size: clamp(18px, 6vw, 32px);
+            color: #d35400;
+            margin: 10px 0;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            transition: all 0.5s ease;
+            padding: 0 10px;
+        }
+
+        .message.hide {
+            transform: translateY(100px);
+            opacity: 0;
+        }
+
+        .georgian-message {
+            font-size: clamp(16px, 5vw, 24px);
+            color: #d35400;
+            margin: 10px 0;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            transition: all 0.5s ease;
+            padding: 0 10px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .georgian-message.hide {
+            transform: translateY(100px);
+            opacity: 0;
+        }
+
+        /* Photo Gallery */
         .photo-gallery {
             display: flex;
             flex-wrap: wrap;
@@ -216,6 +251,7 @@
             object-fit: cover;
         }
 
+        /* Cake */
         .cake {
             width: 80%;
             max-width: 200px;
@@ -288,37 +324,7 @@
             100% { transform: translateX(-50%) scale(1.1); opacity: 0.8; }
         }
 
-        .message {
-            font-size: clamp(18px, 6vw, 32px);
-            color: #d35400;
-            margin: 10px 0;
-            font-weight: bold;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-            transition: all 0.5s ease;
-            padding: 0 10px;
-        }
-
-        .message.hide {
-            transform: translateY(100px);
-            opacity: 0;
-        }
-
-        .georgian-message {
-            font-size: clamp(16px, 5vw, 24px);
-            color: #d35400;
-            margin: 10px 0;
-            font-weight: bold;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-            transition: all 0.5s ease;
-            padding: 0 10px;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .georgian-message.hide {
-            transform: translateY(100px);
-            opacity: 0;
-        }
-
+        /* Balloons */
         .balloons-container {
             position: absolute;
             width: 100%;
@@ -381,6 +387,7 @@
             50% { transform: translateY(-20px) rotate(5deg); }
         }
 
+        /* Confetti */
         .confetti {
             position: absolute;
             width: 10px;
@@ -412,6 +419,47 @@
             100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
         }
 
+        /* ========== RESPONSIVE ADJUSTMENTS ========== */
+        
+        /* Large Desktop Screens (1920px and up) */
+        @media (min-width: 1920px) {
+            .box {
+                max-width: 350px;
+                height: 175px;
+            }
+            
+            .hidden-content.show {
+                transform: translateY(-15vh);
+            }
+            
+            .photo-frame {
+                max-width: 180px;
+            }
+            
+            .cake {
+                max-width: 250px;
+                height: 125px;
+            }
+        }
+
+        /* Standard Desktop Screens (1024px - 1919px) */
+        @media (min-width: 1024px) and (max-width: 1919px) {
+            .hidden-content.show {
+                transform: translateY(-12vh);
+            }
+        }
+
+        /* Tablets (768px - 1023px) */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .box.push-down {
+                transform: translateY(25vh);
+            }
+            
+            .hidden-content.show {
+                transform: translateY(-8vh);
+            }
+        }
+
         /* Landscape orientation adjustments */
         @media (orientation: landscape) {
             .box.push-down {
@@ -431,9 +479,46 @@
                 width: calc(25% - 15px);
                 max-width: 120px;
             }
+            
+            /* Small landscape screens (mobile landscape) */
+            @media (max-height: 500px) {
+                .box.push-down {
+                    transform: translateY(10vh);
+                }
+                
+                .hidden-content.show {
+                    transform: translateY(-3vh);
+                }
+                
+                .message {
+                    font-size: clamp(16px, 4vw, 24px);
+                }
+                
+                .georgian-message {
+                    font-size: clamp(14px, 3vw, 20px);
+                }
+            }
         }
 
-        /* Very small screens */
+        /* Small Tablets (600px - 767px) */
+        @media (min-width: 600px) and (max-width: 767px) {
+            .box.push-down {
+                transform: translateY(25vh);
+            }
+        }
+
+        /* Mobile Phones (up to 599px) */
+        @media (max-width: 599px) {
+            .box.push-down {
+                transform: translateY(30vh);
+            }
+            
+            .hidden-content.show {
+                transform: translateY(-10vh);
+            }
+        }
+
+        /* Very small screens (height under 500px) */
         @media (max-height: 500px) {
             .box {
                 height: 100px;
@@ -483,6 +568,27 @@
             
             .georgian-message {
                 font-size: clamp(14px, 4vw, 20px);
+            }
+        }
+
+        /* Ultra-wide screens (2560px and wider) */
+        @media (min-width: 2560px) {
+            .container {
+                max-width: 2560px;
+                margin: 0 auto;
+            }
+            
+            .box {
+                max-width: 400px;
+                height: 200px;
+            }
+            
+            .hidden-content.show {
+                transform: translateY(-20vh);
+            }
+            
+            .photo-frame {
+                max-width: 200px;
             }
         }
     </style>
@@ -590,14 +696,17 @@
             const balloonsCenter = document.querySelector('.balloons-center');
             const colors = ['#ff7675', '#74b9ff', '#55efc4', '#ffeaa7', '#a29bfe', '#fd79a8'];
             
+            // Calculate balloon size based on screen size
+            const baseSize = Math.min(window.innerWidth, window.innerHeight);
+            const balloonSize = Math.max(30, Math.min(60, baseSize * 0.08));
+            
             // Create 16 balloons with number "16"
             for (let i = 0; i < 16; i++) {
                 const balloon = document.createElement('div');
                 balloon.className = 'balloon number-balloon';
-                const size = Math.min(40, Math.max(20, window.innerWidth * 0.08));
                 
-                balloon.style.width = `${size}px`;
-                balloon.style.height = `${size * 1.2}px`;
+                balloon.style.width = `${balloonSize}px`;
+                balloon.style.height = `${balloonSize * 1.2}px`;
                 balloon.style.background = colors[Math.floor(Math.random() * colors.length)];
                 balloon.style.left = `${10 + Math.random() * 80}%`;
                 balloon.style.top = `${10 + Math.random() * 30}%`;
@@ -617,8 +726,8 @@
                 'https://github.com/shotiko209/gvantsa/blob/main/img/4.jpg?raw=true',
             ];
             
-            // Create 4 photo frames with different images
-            for (let i = 0; i < 4; i++) {
+            // Create photo frames with different images
+            for (let i = 0; i < photoUrls.length; i++) {
                 const frame = document.createElement('div');
                 frame.className = 'photo-frame';
                 
@@ -636,28 +745,19 @@
             const container = document.querySelector('.container');
             const colors = ['#ff7675', '#74b9ff', '#55efc4', '#ffeaa7', '#a29bfe', '#fd79a8'];
             
-            // Left side confetti
-            for (let i = 0; i < 25; i++) {
+            // Create confetti pieces
+            for (let i = 0; i < 50; i++) {
                 const confetti = document.createElement('div');
-                confetti.className = 'confetti left';
+                confetti.className = Math.random() > 0.5 ? 'confetti left' : 'confetti right';
                 confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
                 confetti.style.left = `${Math.random() * 30}%`;
-                confetti.style.animationDelay = `${Math.random() * 3}s`;
-                confetti.style.width = `${Math.random() * 8 + 4}px`;
-                confetti.style.height = `${Math.random() * 8 + 4}px`;
-                
-                container.appendChild(confetti);
-            }
-            
-            // Right side confetti
-            for (let i = 0; i < 25; i++) {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti right';
-                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
                 confetti.style.right = `${Math.random() * 30}%`;
                 confetti.style.animationDelay = `${Math.random() * 3}s`;
-                confetti.style.width = `${Math.random() * 8 + 4}px`;
-                confetti.style.height = `${Math.random() * 8 + 4}px`;
+                
+                // Adjust size based on screen
+                const size = Math.random() * 8 + 4;
+                confetti.style.width = `${size}px`;
+                confetti.style.height = `${size}px`;
                 
                 container.appendChild(confetti);
             }
@@ -667,26 +767,18 @@
             const container = document.querySelector('.container');
             const emojis = ['🎉', '✨', '💊', '🧬', '🩺', '🩼', '🩹', '💉'];
             
-            // Left side emoji confetti
-            for (let i = 0; i < 15; i++) {
+            // Create emoji confetti
+            for (let i = 0; i < 30; i++) {
                 const emoji = document.createElement('div');
-                emoji.className = 'emoji-confetti left';
+                emoji.className = Math.random() > 0.5 ? 'emoji-confetti left' : 'emoji-confetti right';
                 emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
                 emoji.style.left = `${Math.random() * 30}%`;
-                emoji.style.animationDelay = `${Math.random() * 3}s`;
-                emoji.style.fontSize = `${Math.random() * 10 + 15}px`;
-                
-                container.appendChild(emoji);
-            }
-            
-            // Right side emoji confetti
-            for (let i = 0; i < 15; i++) {
-                const emoji = document.createElement('div');
-                emoji.className = 'emoji-confetti right';
-                emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
                 emoji.style.right = `${Math.random() * 30}%`;
                 emoji.style.animationDelay = `${Math.random() * 3}s`;
-                emoji.style.fontSize = `${Math.random() * 10 + 15}px`;
+                
+                // Adjust size based on screen
+                const size = Math.random() * 10 + 15;
+                emoji.style.fontSize = `${size}px`;
                 
                 container.appendChild(emoji);
             }
@@ -696,13 +788,29 @@
         window.addEventListener('resize', function() {
             if (currentState === 1) {
                 document.querySelector('.balloons-center').innerHTML = '';
+                document.querySelectorAll('.confetti, .emoji-confetti').forEach(el => el.remove());
                 createNumberBalloons();
+                createConfetti();
+                createEmojiConfetti();
             }
         });
 
         // Prevent zooming on mobile devices
         document.addEventListener('gesturestart', function(e) {
             e.preventDefault();
+        });
+
+        // Handle orientation change
+        window.addEventListener('orientationchange', function() {
+            setTimeout(() => {
+                if (currentState === 1) {
+                    document.querySelector('.balloons-center').innerHTML = '';
+                    document.querySelectorAll('.confetti, .emoji-confetti').forEach(el => el.remove());
+                    createNumberBalloons();
+                    createConfetti();
+                    createEmojiConfetti();
+                }
+            }, 500);
         });
     </script>
 </body>
